@@ -1,6 +1,6 @@
 const app = angular.module("myApp",[]);
 
-app.controller("myController", function($scope){
+app.controller("myController", function($scope,$http){
     // Proudct list
     $scope.products = ["Laptop", "Mobile", "Tablet"];
 
@@ -19,5 +19,13 @@ app.controller("myController", function($scope){
                 $scope.products.splice(i, 1);
             }
         }
+    }
+
+    $scope.getEmployees = function(){
+        $http.get("https://dummy.restapiexample.com/api/v1/employees").then((res)=>{
+            $scope.employees = res.data.data;
+        },(err)=>{
+            $scope.error = "Error fetching employees: " + err.statusText;
+        })
     }
 })

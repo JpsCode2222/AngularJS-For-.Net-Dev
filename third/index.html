@@ -14,6 +14,14 @@
          <ol>
             <li ng-repeat="product in products">{{product}} <button ng-click="deleteProduct(product)">Remove</button></li>
         </ol>
+        <input ng-model="user.email" required ng-pattern="/\S+@\S+\.\S+/">
+<span ng-show="form.email.$error.required">Email required</span>
+        <select ng-model="selectedProduct" ng-options="p.name for p in products"></select>
+
+        <button ng-click="getEmployees()">GetEmployees</button>
+        <ol>
+            <li ng-repeat="employee in employees">{{employee.employee_name}}</li>
+        </ol>
     </div>
 </body>
 </html>
