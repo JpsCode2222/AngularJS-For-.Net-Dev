@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular js</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <body ng-controller="myCtrl">
+    <p>{{ message }}</p>
+  </body>
+
+  <!-- Script (angular.module().controller) -->
+  <script>
+      angular.module("myApp", [])
+      .controller("myCtrl", function($scope) {
+          $scope.message = "Hello from AngularJS!";
+        });
+    </script>
+</html>
